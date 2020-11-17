@@ -993,7 +993,6 @@ form label {
 #fh5co-testimonial,
 #fh5co-services,
 #fh5co-started,
-#fh5co-footer,
 #fh5co-event,
 #fh5co-couple-story,
 #fh5co-couple,
@@ -1843,10 +1842,9 @@ form label {
 /*# sourceMappingURL=style.css.map */
 
 .be-comment-block {
-    margin-bottom: 50px !important;
     /*border: 1px solid #edeff2;*/
     border-radius: 2px;
-    padding: 50px 0;
+    padding: 50px 0 0 0;
     /*border:1px solid #ffffff;*/
 }
 
@@ -1907,9 +1905,10 @@ form label {
     line-height: 18px;
     color: #7a8192;
     display: block;
-    background: #f6f6f7;
+    background: #b5d3d838;
     border: 1px solid #edeff2;
     padding: 10px;
+    border-radius: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -1921,6 +1920,7 @@ form label {
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
   padding: 30px 20px;
   background: #fff;
+  border-radius: 0 25px;
 }
 
 .team .member img {
@@ -1982,4 +1982,16 @@ form label {
     float: left;
     padding: 0 15px;
   }
+}
+
+#bung-le {
+  padding: 7em 0;
+}
+
+#fh5co-footer {
+  padding: 2em 0 0 0;
+}
+
+.hide-comment {
+  display: none;
 }
