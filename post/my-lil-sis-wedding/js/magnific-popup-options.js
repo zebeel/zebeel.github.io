@@ -1,8 +1,15 @@
 $(document).ready(function() {
-  // MagnificPopup
+	$('#fh5co-gallery-list').magnificPopup({
+		delegate: 'a', // child items selector, by clicking on it popup will open
+		type: 'image',
+		gallery: {enabled: true},
+		removalDelay: 300,
+	});
+  	// MagnificPopup
 	var magnifPopup = function() {
 		$('.image-popup').magnificPopup({
 			type: 'image',
+			delegate: 'a',
 			removalDelay: 300,
 			mainClass: 'mfp-with-zoom',
 			gallery:{
