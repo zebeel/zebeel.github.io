@@ -634,22 +634,11 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 
 <script>
-    var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
-    d = new Date('2020-11-22 12:00:00')
-
-    // default example
     simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
-
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
+        year: 2020,
+        month: 11,
+        day: 22,
+        hours: 18
     });
 </script>
 
