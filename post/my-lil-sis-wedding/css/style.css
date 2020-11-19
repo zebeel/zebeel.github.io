@@ -1995,3 +1995,12 @@ form label {
 .hide-comment {
   display: none;
 }
+
+.footer-thanks h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #F14E95;
+  font-family: "Sacramento", Arial, serif;
+}
