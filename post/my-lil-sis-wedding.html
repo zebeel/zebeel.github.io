@@ -76,7 +76,7 @@
                             <h1>Khánh &amp; Trâm</h1>
                             <h2>We Are Getting Married</h2>
                             <div class="simply-countdown simply-countdown-one"></div>
-                            <p><a href="#fh5co-testimonial" class="btn btn-default btn-sm">Viết lời chúc</a></p>
+                            <p><a class="btn btn-default btn-sm" id="play-music" onclick="playMusic()">Chạy nhạc</a><a href="#fh5co-testimonial" class="btn btn-default btn-sm">Viết lời chúc</a></p>
                         </div>
                     </div>
                 </div>
@@ -588,12 +588,16 @@
         </div>
     </div>
 
-    <audio id="myAudio">
-        <source src="my-lil-sis-wedding/music/ForeverLove.mp3" type="audio/mpeg">
-    </audio>
+<!--    <audio id="myAudio">-->
+<!--        <source src="my-lil-sis-wedding/music/ForeverLove.mp3" type="audio/mpeg">-->
+<!--    </audio>-->
 
     <footer id="fh5co-footer" role="contentinfo" class="fh5co-section-gray footer-thanks">
         <div class="container">
+
+            <div class="row">
+                <div id="waveform"></div>
+            </div>
 
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -637,6 +641,9 @@
 <!--ConfirmJS-->
 <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>-->
 
+<!--Wave Surfer-->
+<script src="https://unpkg.com/wavesurfer.js"></script>
+
 <script>
     simplyCountdown('.simply-countdown-one', {
         year: 2020,
@@ -660,8 +667,28 @@
         x.pause();
     }
 
-    setTimeout(function(){ playAudio(); }, 10000);
+    // setTimeout(function(){ playAudio(); }, 10000);
 
+</script>
+<script type="text/javascript">
+    let ws = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: 'violet',
+        progressColor: 'purple',
+        height : 90,
+    });
+    ws.load('https://zebeel.github.io/post/my-lil-sis-wedding/music/ForeverLove.mp3');
+
+    function playMusic() {
+        let txt = $('#play-music').text(), PLAY = 'Chạy nhạc', PAUSE = 'Dừng nhạc'
+        if(txt === PLAY){
+            $('#play-music').text(PAUSE)
+            ws.play();
+        } else {
+            $('#play-music').text(PLAY)
+            ws.pause();
+        }
+    }
 </script>
 </body>
 </html>
