@@ -671,6 +671,7 @@
 
 </script>
 <script type="text/javascript">
+    $('#play-music').hide()
     let ws = WaveSurfer.create({
         container: '#waveform',
         waveColor: 'violet',
@@ -678,6 +679,10 @@
         height : 90,
     });
     ws.load('https://zebeel.github.io/post/my-lil-sis-wedding/music/ForeverLove.mp3');
+    ws.on('ready', function () {
+        console.log('Music Ready!')
+        $('#play-music').show()
+    })
 
     function playMusic() {
         let txt = $('#play-music').text(), PLAY = 'Chạy nhạc', PAUSE = 'Dừng nhạc'
