@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build && cd dist && pwd
+        run: npm run build && cd dist && pwd && ls
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
