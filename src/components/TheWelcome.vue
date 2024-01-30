@@ -7,6 +7,7 @@ import IconDatabase from './icons/IconDatabase.vue'
 import IconGit from './icons/IconGit.vue'
 import IconTest from './icons/IconTest.vue'
 import IconLanguage from './icons/IconLanguage.vue'
+import IconCommunity from './icons/IconCommunity.vue'
 </script>
 
 <template>
@@ -18,9 +19,7 @@ import IconLanguage from './icons/IconLanguage.vue'
     <ul>
       <li>JavaScript, TypeScript, Node.js, Express</li>
       <li>Vue.js, React, Angular</li>
-      <li>PHP, Laravel</li>
-      <li>Java, Spring</li>
-      <li>Python, Django</li>
+      <li>PHP, Laravel | Java, Spring | Python, Django</li>
     </ul>
   </WelcomeItem>
 
@@ -47,6 +46,16 @@ import IconLanguage from './icons/IconLanguage.vue'
 
   <WelcomeItem>
     <template #icon>
+      <IconCommunity />
+    </template>
+    <template #heading>Communication Services (3+ years)</template>
+    <ul>
+      <li>Twilio</li>
+    </ul>
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
       <IconDatabase />
     </template>
     <template #heading>Database</template>
@@ -62,8 +71,7 @@ import IconLanguage from './icons/IconLanguage.vue'
     </template>
     <template #heading>Version Control and CI/CD</template>
     <ul>
-      <li>Proficient in Git</li>
-      <li>Continuous Integration/Continuous Deployment (CI/CD)</li>
+      <li>Proficient in Git & CI/CD</li>
     </ul>
   </WelcomeItem>
 

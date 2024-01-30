@@ -8,8 +8,7 @@ import HelloWorld from '../components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/meandtora.png" width="200" />
 
     <div class="wrapper">
-      <HelloWorld msg="Chuong Le" />
-
+      <HelloWorld msg="Call me Le" />
       <nav>
         <RouterLink to="/home">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -31,7 +30,7 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
-  border-radius: 2rem;
+  border-radius: 3rem;
 }
 
 nav {
@@ -74,6 +73,9 @@ nav a:first-of-type {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
+    font-family: 'Dosis', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
   }
 
   nav {
