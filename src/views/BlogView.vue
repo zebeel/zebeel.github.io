@@ -17,19 +17,23 @@ import Timeline from '../components/Timeline.vue'
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
 .blog {
   @import '../../node_modules/bootstrap/dist/css/bootstrap';
-  font-family: 'Darker Grotesque', sans-serif;
+  font-family: "Aleo", serif;
   font-weight: 500;
+  font-size: 1.5em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   background-color: white;
-  max-width: 600px !important;
+  // max-width: 600px !important;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
   margin: auto;
   .jp {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 0.7em;
+    // font-family: 'Noto Serif JP', serif;
+    // font-size: 0.7em;
   }
 }
 </style>

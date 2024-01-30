@@ -9,7 +9,7 @@ import HelloWorld from '../components/HelloWorld.vue'
       <img alt="Vue logo" class="logo" src="@/assets/meandtora.png" width="200" />
 
       <div class="wrapper">
-        <HelloWorld msg="Call me Le" />
+        <HelloWorld msg="Call me Le" slogan="Crafting digital solutions, end to end, a professional full-stack developer." />
         <nav>
           <RouterLink to="/home">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>

@@ -1,27 +1,19 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="container" id="top-header">
-    <header
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1"
-    >
-      <a href="#" class="d-flex align-items-center col mb-1 mb-md-0 text-dark text-decoration-none">
-        <div class="logo" @click="gotoHomepage">torapapa</div>
-      </a>
+    <header class="d-flex pb-3">
+      <div class="logo" @click="gotoHomepage"><i class="fas fa-house pb-2"></i> torapapa</div>
     </header>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'blog-header',
-  data() {
-    return {}
-  },
-  methods: {
-    gotoHomepage: () => {
-      // this.$router.push({ name: 'home' })
-    }
-  }
-}
+<script setup lang="ts">
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
+const gotoHomepage = () => {
+  router.push({ path: '/' });
+};
 </script>
 
 <style scoped lang="scss">
@@ -29,5 +21,6 @@ export default {
   color: #41464b;
   font-size: 1.3em;
   font-family: 'Pacifico', cursive;
+  cursor: pointer;
 }
 </style>

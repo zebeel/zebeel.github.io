@@ -115,15 +115,15 @@ export default {
 
 <style scoped lang="scss">
 .avatar {
-  width: 3em;
-  height: 3em;
+  width: 5em;
+  height: 5em;
   border-radius: 3em;
 }
 .user-info {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 .created-at {
-  font-size: 0.6em;
+  font-size: 1em;
   font-style: italic;
 }
 .like-icon {

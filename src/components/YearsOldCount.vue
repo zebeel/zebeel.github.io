@@ -84,14 +84,14 @@ export default {
 
 <style scoped lang="scss">
 .years-old-count {
-  font-family: 'Sacramento', cursive;
+  font-family: "Aleo", serif;
   text-shadow: 2px 2px 4px #6c757d;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin-bottom: 1rem;
   span {
     font-size: 1.8em;
-    color: #6c757d;
+    // color: #6c757d;
   }
   .count-number {
     font-size: 1.6em;

@@ -1,15 +1,16 @@
 <script setup lang="ts">
 defineProps<{
-  msg: string
+  msg: string,
+  slogan: string,
 }>()
 </script>
 
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <h3>Crafting digital solutions, end to end – a professional full-stack developer.</h3>
+    <h3>{{ slogan }}</h3>
     <br />
-    <h5><i>← Me and my son</i></h5>
+    <!-- <h5><i>← Me and my son</i></h5> -->
   </div>
 </template>
 
