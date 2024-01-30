@@ -1,7 +1,7 @@
 <template>
   <base-card>
     <div class="container post" :id="`post-${p.id}`">
-      <div class="d-flex mb-1 pt-2">
+      <div class="d-flex align-items-center mb-1 pt-2">
         <div class="avatar-area">
           <img :src="p.avatar" class="avatar" />
         </div>
@@ -9,7 +9,7 @@
           <div class="user-info">
             <strong>{{ p.by }}</strong>
             <span v-if="p.location">
-              at&nbsp;<i class="fa-solid fa-location-dot" style="font-size: 0.8em; color: red"></i>&nbsp;
+              at&nbsp;<i class="fa-solid fa-location-dot pb-1" style="font-size: 0.8em; color: red"></i>&nbsp;
               <strong>{{ p.location }}</strong></span
             >
             <span v-if="p.with">
@@ -22,7 +22,12 @@
       <div class="d-flex post-content">
         <p v-html="p.content"></p>
       </div>
-      <CountUp v-if="p.countUp" :countUpTitle="p.countUpText" :startTimestamp="p.countUp"></CountUp>
+      <!-- <CountUp v-if="p.countUp" :countUpTitle="p.countUpText" :startTimestamp="p.countUp"></CountUp> -->
+      <YearsOldCount
+        v-if="p.countUp"
+        :title="p.countUpText"
+        :birthday="p.countUp"
+      ></YearsOldCount>
       <YearsOldCount
         v-if="p.ageCount"
         :title="p.ageCountTitle"
@@ -35,14 +40,14 @@
 
 <script>
 import Gallery from './Gallery.vue'
-import CountUp from './CountUp.vue'
+// import CountUp from './CountUp.vue'
 import YearsOldCount from './YearsOldCount.vue'
 import BaseCard from '@/components/ui/BaseCard.vue'
 import { constants } from '@/libs/constants'
 import moment from 'moment'
 export default {
   name: 'blog-post',
-  components: { Gallery, CountUp, BaseCard, YearsOldCount },
+  components: { Gallery, BaseCard, YearsOldCount },
   props: ['p'],
   data() {
     return {
@@ -120,10 +125,10 @@ export default {
   border-radius: 3em;
 }
 .user-info {
-  font-size: 1.5em;
+  // font-size: 1.5em;
 }
 .created-at {
-  font-size: 1em;
+  // font-size: 1em;
   font-style: italic;
 }
 .like-icon {

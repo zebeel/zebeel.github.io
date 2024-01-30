@@ -22,7 +22,7 @@ import Timeline from '../components/Timeline.vue'
   @import '../../node_modules/bootstrap/dist/css/bootstrap';
   font-family: "Aleo", serif;
   font-weight: 500;
-  font-size: 1.5em;
+  // font-size: 1.5em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="container" id="top-header">
-    <header class="d-flex pb-3">
+    <header class="d-flex pt-1">
       <div class="logo" @click="gotoHomepage"><i class="fas fa-house pb-2"></i> torapapa</div>
     </header>
   </div>
