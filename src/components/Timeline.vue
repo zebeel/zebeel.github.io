@@ -26,16 +26,19 @@
   </div>
 </template>
 
-<script>
-import Post from '@/components/Post.vue'
+<script lang="ts">
+import Post from '@/components/BlogPost.vue'
+import type PostType from '@/types/Post'
 import { posts } from '@/libs/posts'
 import { constants } from '@/libs/constants'
-export default {
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   name: 'blog-timeline',
   components: { Post },
   data() {
     return {
-      posts: [],
+      posts: [] as PostType[],
       reactions: [],
       comments: [],
       ready: false,
@@ -50,7 +53,7 @@ export default {
   methods: {
     loadPosts() {
       if (this.posts.length < posts.length) {
-        const targetPosts = posts.slice(
+        const targetPosts: PostType[] = posts.slice(
           this.currentIndex,
           this.currentIndex + constants.post_per_page
         )
@@ -62,7 +65,7 @@ export default {
       }
     }
   }
-}
+})
 </script>
 
 <style scoped lang="scss">

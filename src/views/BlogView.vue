@@ -6,7 +6,6 @@
 </template>
 
 <script setup lang="ts">
-// TODO convert to typescript
 import Header from '../components/Header.vue'
 import Timeline from '../components/Timeline.vue'
 </script>
@@ -32,9 +31,9 @@ import Timeline from '../components/Timeline.vue'
   padding: 0.5em;
   margin: auto;
   box-shadow: 0 0 2px 2px white;
-  .jp {
-    // font-family: 'Noto Serif JP', serif;
-    // font-size: 0.7em;
-  }
+  // .jp {
+  //   font-family: 'Noto Serif JP', serif;
+  //   font-size: 0.7em;
+  // }
 }
 </style>

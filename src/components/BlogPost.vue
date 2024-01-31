@@ -22,7 +22,6 @@
       <div class="d-flex post-content">
         <p v-html="p.content"></p>
       </div>
-      <!-- <CountUp v-if="p.countUp" :countUpTitle="p.countUpText" :startTimestamp="p.countUp"></CountUp> -->
       <YearsOldCount
         v-if="p.countUp"
         :title="p.countUpText"
@@ -38,84 +37,13 @@
   </base-card>
 </template>
 
-<script>
+<script setup lang="ts">
 import Gallery from './Gallery.vue'
-// import CountUp from './CountUp.vue'
 import YearsOldCount from './YearsOldCount.vue'
 import BaseCard from '@/components/ui/BaseCard.vue'
-import { constants } from '@/libs/constants'
-import moment from 'moment'
-export default {
-  name: 'blog-post',
-  components: { Gallery, BaseCard, YearsOldCount },
-  props: ['p'],
-  data() {
-    return {
-      canShow: false,
-      post: {},
-      reactClick: 0,
-      canReact: true,
-      canComment: false,
-      countUpData: { days: 0, hours: 0, minutes: 0, seconds: 0 }
-    }
-  },
-  created() {
-    Object.assign(this.post, this.p)
-    this.canComment = !!this.post.canComment
-    this.canReact = !!this.post.canComment
-    this.countUp()
-  },
-  methods: {
-    react() {
-      this.reactClick++
-      if (this.canReact) {
-        const data = { postID: this.p.id, count: this.reactClick }
-        this.reactClick = 0
-        this.canReact = false
-        this.axios.post(`${constants.server_root}/posts/react`, data).then((res) => {
-          if (res.data.status) {
-            console.log(`Reacted! #${this.p.id}`)
-            this.post.reaction = res.data.reaction
-          }
-          this.canReact = true
-        })
-      }
-    },
-    comment() {
-      this.canComment = !this.canComment
-    },
-    commentSuccess(data) {
-      this.post.comments.push(data)
-    },
-    formatDate(date) {
-      return moment(date).format('YYYY-MM-DD h:mm A')
-    },
-    formatBy(by) {
-      const pieces = by.split(' ')
-      const convertedPieces = []
-      for (const s of pieces) {
-        convertedPieces.push(s.slice(0, 1).toUpperCase() + s.slice(1))
-      }
-      return convertedPieces.join(' ')
-    },
-    countUp() {
-      if (!this.p.countUp) return
-      const that = this
-      const from = new Date(this.p.countUp)
-      const from_ms = from.getTime()
-      setInterval(function () {
-        const now = new Date()
-        const current_ms = now.getTime()
-        const diff = current_ms - from_ms
-        const seconds = Math.floor((diff / 1000) % 60),
-          minutes = Math.floor((diff / (1000 * 60)) % 60),
-          hours = Math.floor((diff / (1000 * 60 * 60)) % 24),
-          days = Math.floor(diff / (1000 * 60 * 60 * 24))
-        that.countUpData = { days, hours, minutes, seconds }
-      }, 1000)
-    }
-  }
-}
+import { defineProps } from 'vue'
+
+defineProps(['p']);
 </script>
 
 <style scoped lang="scss">
@@ -124,9 +52,9 @@ export default {
   height: 5em;
   border-radius: 3em;
 }
-.user-info {
-  // font-size: 1.5em;
-}
+// .user-info {
+//   font-size: 1.5em;
+// }
 .created-at {
   // font-size: 1em;
   font-style: italic;
