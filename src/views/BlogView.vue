@@ -29,8 +29,9 @@ import Timeline from '../components/Timeline.vue'
   background-color: white;
   // max-width: 600px !important;
   border-radius: 0.5em;
-  padding: 0.5em 0.1em;
+  padding: 0.5em;
   margin: auto;
+  box-shadow: 0 0 2px 2px white;
   .jp {
     // font-family: 'Noto Serif JP', serif;
     // font-size: 0.7em;
