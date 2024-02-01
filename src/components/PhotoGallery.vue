@@ -33,40 +33,28 @@
   </div>
 </template>
 
-<script>
-import Grid1 from './grid/Grid1.vue'
-import Grid2 from './grid/Grid2.vue'
-import Grid3 from './grid/Grid3.vue'
-import Grid3Plus from './grid/Grid3Plus.vue'
+<script setup lang="ts">
+import Grid1 from './grid/GridType1.vue'
+import Grid2 from './grid/GridType2.vue'
+import Grid3 from './grid/GridType3.vue'
+import Grid3Plus from './grid/GridType3Plus.vue'
 import PhotoShow from './PhotoShow.vue'
-export default {
-  name: 'blog-gallery',
-  props: ['items'],
-  components: {
-    Grid1,
-    Grid2,
-    Grid3,
-    Grid3Plus,
-    PhotoShow
-  },
-  data() {
-    return {
-      index: null,
-      currentWidth: 0,
-      isShowPhoto: false
-    }
-  },
-  mounted() {
-    this.currentWidth = document.getElementById('gallery').offsetWidth
-  },
-  methods: {
-    showPhoto(val) {
-      this.isShowPhoto = val
-    },
-    hidePhoto() {
-      this.isShowPhoto = false
-    }
-  }
+import { ref, onMounted } from 'vue'
+
+const { items } = defineProps(['items'])
+const currentWidth = ref(0)
+const isShowPhoto = ref(false)
+
+onMounted(() => {
+  currentWidth.value = document.getElementById('gallery')?.offsetWidth ?? 0
+})
+
+const showPhoto = (val: boolean) => {
+  isShowPhoto.value = val
+}
+
+const hidePhoto = () => {
+  isShowPhoto.value = false
 }
 </script>
 

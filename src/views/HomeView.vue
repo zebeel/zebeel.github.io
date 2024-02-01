@@ -9,10 +9,14 @@ import HelloWorld from '../components/HelloWorld.vue'
       <img alt="Vue logo" class="logo" src="@/assets/meandtora.png" width="200" />
 
       <div class="wrapper">
-        <HelloWorld msg="Call me Le" slogan="Crafting digital solutions, end to end, a professional full-stack developer." />
+        <HelloWorld
+          msg="Call me Le"
+          slogan="Crafting digital solutions, end to end, a professional full-stack developer."
+        />
         <nav>
           <RouterLink to="/home">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/links">Links</RouterLink>
           <RouterLink to="/blog">Blog</RouterLink>
         </nav>
       </div>
@@ -30,6 +34,7 @@ import HelloWorld from '../components/HelloWorld.vue'
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  font-family: 'Dosis', sans-serif;
 
   header {
     line-height: 1.5;

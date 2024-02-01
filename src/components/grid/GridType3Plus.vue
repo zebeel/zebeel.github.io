@@ -1,12 +1,12 @@
 <template>
   <div class="row" :style="`height: ${gridHeight}px`">
-    <div class="col grid-1-2 bg" :style="bg(items[0])"></div>
+    <div class="col grid-1-2 bg" :style="bgStyle(items[0])"></div>
     <div class="col grid-1-2">
       <div class="row grid-1-4">
-        <div class="col bg" :style="bg(items[1])"></div>
+        <div class="col bg" :style="bgStyle(items[1])"></div>
       </div>
       <div class="row grid-1-4">
-        <div class="col bg" :style="bg(items[2])">
+        <div class="col bg" :style="bgStyle(items[2])">
           <div class="d-flex justify-content-center more-items align-items-center">
             <span>+{{ moreItems }}</span>
           </div>
@@ -16,25 +16,27 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Grid2',
-  props: ['items', 'cw'],
-  computed: {
-    gridHeight() {
-      // const w = screen.width >= 1440 ? 1440 : screen.width;
-      // const h = w * 17 / 375 - screen.width / 100;
-      // return h < 17 ? 17 : h > 50 ? 50 : h;
-      return this.cw
-    },
-    moreItems() {
-      return this.items.length - 3
-    }
-  },
-  methods: {
-    bg(img) {
-      return `background-image: url('${img}');`
-    }
+<script setup lang="ts">
+import { computed } from 'vue'
+const props = defineProps(['items', 'cw'])
+
+const gridHeight = computed(() => {
+  return props.cw
+})
+
+const moreItems = computed(() => {
+  return props.items.length - 3
+})
+
+const bgStyle = (img: string) => {
+  return {
+    backgroundImage: `url('${img}')`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    cursor: 'pointer',
+    borderRadius: '0.5em',
+    border: '0.2em solid white'
   }
 }
 </script>

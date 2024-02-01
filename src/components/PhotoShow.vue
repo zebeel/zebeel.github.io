@@ -4,7 +4,7 @@
       class="gallery-modal d-flex flex-column justify-content-center align-items-center"
       @click="photoShowClick"
     >
-      <Image :image-url="image" v-touch:swipe="swipeHandler"></Image>
+      <ImageItem :image-url="image" v-touch:swipe="swipeHandler"></ImageItem>
     </div>
     <div class="close-x" @click="hideImage"><i class="fas fa-times"></i></div>
     <div class="next p-3" @click="next" v-if="items.length > 1">
@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import Image from './Image.vue'
+import ImageItem from '@/components/ImageItem.vue'
 export default {
   name: 'PhotoShow',
   components: {
-    Image
+    ImageItem
   },
   props: ['items', 'cw', 'id'],
   data() {

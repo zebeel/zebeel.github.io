@@ -8,12 +8,12 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-const router = useRouter();
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 const gotoHomepage = () => {
-  router.push({ path: '/' });
-};
+  router.push({ path: '/' })
+}
 </script>
 
 <style scoped lang="scss">

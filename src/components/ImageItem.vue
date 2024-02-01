@@ -8,35 +8,33 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ['imageUrl', 'alt'],
-  data() {
-    return {
-      imgsrc: '',
-      loaded: false
-    }
-  },
-  watch: {
-    imageUrl() {
-      this.loadImage()
-    }
-  },
-  created() {
-    this.loadImage()
-  },
-  methods: {
-    loadImage() {
-      const myImage = new Image()
-      myImage.src = this.imageUrl
-      myImage.onload = () => {
-        this.imgsrc = myImage.src
-        this.loaded = true
-      }
-      this.loaded = false
-    }
+<script setup lang="ts">
+import { ref, watch, onMounted } from 'vue'
+const props = defineProps(['imageUrl', 'alt'])
+
+const imgsrc = ref('')
+const loaded = ref(false)
+
+const loadImage = () => {
+  const myImage = new Image()
+  myImage.src = props.imageUrl
+  myImage.onload = () => {
+    imgsrc.value = myImage.src
+    loaded.value = true
   }
+  loaded.value = false
 }
+
+watch(
+  () => props.imageUrl,
+  () => {
+    loadImage()
+  }
+)
+
+onMounted(() => {
+  loadImage()
+})
 </script>
 
 <style scoped>
