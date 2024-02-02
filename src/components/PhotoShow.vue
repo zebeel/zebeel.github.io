@@ -4,7 +4,7 @@
       class="gallery-modal d-flex flex-column justify-content-center align-items-center"
       @click="photoShowClick"
     >
-      <ImageItem :image-url="image" v-touch:swipe="swipeHandler"></ImageItem>
+      <ImageItem :image-url="image"></ImageItem>
     </div>
     <div class="close-x" @click="hideImage"><i class="fas fa-times"></i></div>
     <div class="next p-3" @click="next" v-if="items.length > 1">
@@ -19,48 +19,30 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import ImageItem from '@/components/ImageItem.vue'
-export default {
-  name: 'PhotoShow',
-  components: {
-    ImageItem
-  },
-  props: ['items', 'cw', 'id'],
-  data() {
-    return {
-      index: null
-    }
-  },
-  created() {
-    this.index = this.id ? this.id : 0
-  },
-  computed: {
-    image() {
-      return this.items[this.index]
-    },
-    maxWidth() {
-      return this.cw
-    }
-  },
-  methods: {
-    next() {
-      this.index === this.items.length - 1 ? (this.index = 0) : this.index++
-    },
-    previous() {
-      this.index === 0 ? (this.index = this.items.length - 1) : this.index--
-    },
-    hideImage() {
-      this.$emit('hidePhoto')
-    },
-    photoShowClick(e) {
-      if (e.target.localName != 'img') this.$emit('hidePhoto')
-    },
-    swipeHandler(e) {
-      if (e === 'left') this.next()
-      if (e === 'right') this.previous()
-    }
-  }
+import { ref, computed, defineEmits } from 'vue'
+
+const emit = defineEmits(['hidePhoto'])
+const { items } = defineProps(['items', 'cw', 'id'])
+const index = ref(0)
+
+const image = computed(() => {
+  return items[index.value]
+})
+
+const next = () => {
+  index.value === items.length - 1 ? (index.value = 0) : index.value++
+}
+const previous = () => {
+  index.value === 0 ? (index.value = items.length - 1) : index.value--
+}
+const hideImage = () => {
+  emit('hidePhoto')
+}
+const photoShowClick = (e: MouseEvent) => {
+  const target = e.target as HTMLTextAreaElement
+  if (target.localName != 'img') emit('hidePhoto')
 }
 </script>
 
