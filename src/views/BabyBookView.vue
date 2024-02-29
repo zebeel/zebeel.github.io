@@ -1,7 +1,7 @@
 <template>
   <div class="container baby-book">
     <div class="name alert alert-primary" v-show="title">
-      <i class="fa-solid fa-chart-simple"></i> Đang phát: {{ title }}
+      <i class="fa-solid fa-play"></i> Đang phát: <b>{{ title }}</b>
     </div>
     <audio-player
       ref="audioPlayer"
@@ -20,7 +20,7 @@
       >
         <span>{{ data.folderDisplayName }}</span>
         <span v-if="data.did === currentDID" class="text-secondary" style="font-size: small">
-          <br /><i class="fa-solid fa-chart-simple"></i> {{ title }}
+          <br /><i class="fa-solid fa-play"></i> {{ title }}
         </span>
       </li>
     </ul>
@@ -54,7 +54,7 @@
                 @click="handlePlaySpecify(file)"
               >
                 {{ file.displayName }}
-                <span v-if="file.fid === currentFID"><i class="fa-solid fa-chart-simple"></i></span>
+                <span v-if="file.fid === currentFID"><i class="fa-solid fa-play"></i></span>
               </li>
             </ul>
           </div>
@@ -135,6 +135,9 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
+#app {
+  width: 100%;
+}
 .baby-book {
   font-family: 'Aleo', serif;
   font-weight: 500;
