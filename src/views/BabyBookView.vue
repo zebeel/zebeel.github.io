@@ -146,7 +146,7 @@ export default {
   padding: 0.5em;
   margin: auto;
   box-shadow: 0 0 2px 2px white;
-  min-width: 500px;
+  // min-width: 500px;
 }
 .audio-player {
   padding: 0 20px;
