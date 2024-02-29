@@ -13,7 +13,7 @@ import Timeline from '../components/Timeline.vue'
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
 .blog {
-  @import '../../node_modules/bootstrap/dist/css/bootstrap';
+  // @import '../../node_modules/bootstrap/dist/css/bootstrap';
   font-family: 'Aleo', serif;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
