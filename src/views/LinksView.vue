@@ -2,6 +2,7 @@
 import WelcomeItem from '../components/WelcomeItem.vue'
 import IconHeart from '../components/icons/IconHeart.vue'
 import IconBook from '../components/icons/IconBook.vue'
+import IconTree from '../components/icons/IconTree.vue'
 </script>
 
 <template>
@@ -27,5 +28,14 @@ import IconBook from '../components/icons/IconBook.vue'
       <router-link to="/baby-books">Baby books</router-link>
     </template>
     <p>Tổng hợp audio sách, nhạc hay cho bé.</p>
+  </WelcomeItem>
+  <WelcomeItem>
+    <template #icon>
+      <IconTree />
+    </template>
+    <template #heading>
+      <router-link to="/family-tree">Family Tree</router-link>
+    </template>
+    <p>Cây gia phả họ Lê nhánh cố Bường.</p>
   </WelcomeItem>
 </template>
