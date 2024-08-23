@@ -2,7 +2,7 @@
 <template>
   <div class="container" id="top-header">
     <header class="d-flex pt-1">
-      <div class="logo" @click="gotoHomepage"><i class="fas fa-house pb-2"></i> torapapa</div>
+      <div class="logo d-flex align-items-center" @click="gotoHomepage"><i class="fas fa-house pb-2"></i>&nbsp;tora & min papa</div>
     </header>
   </div>
 </template>

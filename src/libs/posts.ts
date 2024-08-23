@@ -2,6 +2,20 @@ import type Post from '@/types/Post'
 
 export const posts: Post[] = [
   {
+    id: 11,
+    avatar: 'images/avatar/comment.jpg',
+    by: 'Phương Nhung',
+    at: '2024 Aug 22 at 07:04 AM',
+    ageCountTitle: 'Min-kun',
+    ageCount: '2024/08/22',
+    location: 'Bệnh viện đa khoa Hà Tĩnh',
+    with: 'Min-kun',
+    content: `Bé là Lê Minh Kiệt, mọi người còn gọi em là Min. Hôm nay em thương mẹ nên ra rất nhanh. Em nặng 3 ký 1, dài 50 cm. Cả nhà yêu em nhiều nhiều 💗💗💗`,
+    images: ['images/post/11/1.jpg', 'images/post/11/2.jpg', 'images/post/11/3.jpg', 'images/post/11/4.jpg'],
+    reaction: 0,
+    comments: []
+  },
+  {
     id: 10,
     avatar: 'images/avatar/comment.jpg',
     by: 'Phương Nhung',
