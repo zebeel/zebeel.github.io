@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import WelcomeItem from './WelcomeItem.vue'
+import IconBridge from './icons/IconBridge.vue'
 import IconDeveloper from './icons/IconDeveloper.vue'
 import IconMobile from './icons/IconMobile.vue'
 import IconCloud from './icons/IconCloud.vue'
@@ -11,6 +12,18 @@ import IconCommunity from './icons/IconCommunity.vue'
 </script>
 
 <template>
+  <WelcomeItem>
+    <template #icon>
+      <IconBridge />
+    </template>
+    <template #heading>Bridge System Engineer (3+ years)</template>
+    <ul>
+      <li>Facilitated communication between Japanese clients and Vietnamese development teams</li>
+      <li>Translated business requirements into technical specifications</li>
+      <li>Managed project timelines, quality assurance, and user acceptance testing</li>
+      <li>Experienced in documentation, customer negotiation, and team coordination using Agile/Scrum</li>
+    </ul>
+  </WelcomeItem>
   <WelcomeItem>
     <template #icon>
       <IconDeveloper />

@@ -1,12 +1,9 @@
 <template>
   <div class="about">
     <h3>
-      Hello, I'm Chuong Le, originally from Vietnam and currently residing and working in Japan. I
-      have a profound passion for programming and find joy in the challenges that come with it. My
-      love for technology has led me to a fulfilling career, and I thrive in the dynamic world of
-      coding. Beyond my professional life, I have a keen interest in sports and enjoy watching
-      various athletic events in my free time. I believe in the power of continuous learning and
-      embracing new experiences, both in my work and personal pursuits.
+      Hello, I'm Chuong Le, a full-stack developer and bridge system engineer from Vietnam, currently living and working in Japan. With over 3 years of experience as a BrSE, I act as a vital bridge between Japanese clients and Vietnamese development teams — translating ideas, aligning expectations, and ensuring smooth project execution across borders.
+      I’m passionate about crafting digital solutions that are both technically sound and aligned with real-world business needs. I find joy in problem-solving, communication, and the collaborative nature of software development.
+      Outside of work, I live simply and appreciate the calm rhythm of life. I enjoy the peaceful countryside, where I feel most at home — surrounded by nature, away from the bustle of the city. I also love watching sports and believe in continuous self-growth, embracing each challenge as an opportunity to learn and improve.
     </h3>
   </div>
 </template>

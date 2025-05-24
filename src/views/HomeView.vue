@@ -6,12 +6,12 @@ import HelloWorld from '../components/HelloWorld.vue'
 <template>
   <div class="home">
     <header>
-      <img alt="Vue logo" class="logo" src="@/assets/meandtora.png" width="200" />
+      <img alt="Vue logo" class="logo" src="@/assets/profile-image.png" width="200" />
 
       <div class="wrapper">
         <HelloWorld
           msg="Call me Le"
-          slogan="Crafting digital solutions, end to end, a professional full-stack developer."
+          slogan="End-to-end digital solutions by a full-stack developer and bridge system engineer."
         />
         <nav>
           <RouterLink to="/home">Home</RouterLink>
