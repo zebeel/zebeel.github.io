@@ -29,6 +29,13 @@ jobs:
           npm run build
           cp ./dist/index.html ./dist/404.html
 
+      - name: Remove symlinks in dist
+        run: |
+          find ./dist -type l -delete
+
+      - name: Check dist size
+        run: du -sh ./dist
+
       - name: Upload artifact manually
         uses: actions/upload-artifact@v4
         with:
