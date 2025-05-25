@@ -29,10 +29,11 @@ jobs:
           npm run build
           cp ./dist/index.html ./dist/404.html
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload artifact manually
+        uses: actions/upload-artifact@v2
         with:
-          path: './dist'
+          name: github-pages
+          path: ./dist
 
   deploy:
     needs: build
@@ -41,6 +42,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: github-pages
+
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v1
