@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: npm ci
@@ -29,17 +29,9 @@ jobs:
           npm run build
           cp ./dist/index.html ./dist/404.html
 
-      - name: Remove symlinks in dist
-        run: |
-          find ./dist -type l -delete
-
-      - name: Check dist size
-        run: du -sh ./dist
-
-      - name: Upload artifact manually
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: ./dist
 
   deploy:
@@ -47,13 +39,8 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-
       - name: Deploy to GitHub Pages
-        id: deploy
+        id: deployment
         uses: actions/deploy-pages@v4
