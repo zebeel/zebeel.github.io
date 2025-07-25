@@ -392,7 +392,7 @@
                     "ja": "ブオン家の家系図をデジタル化し、検索、親族関係の表示、メンバー情報の追加機能を実装。",
                     "en": "Digitized Buong family tree, enabling search, relationship visualization, and member info management."
                     },
-                    "details": ""
+                    "details": "zebeel.github.io/family-tree"
                 },
                 {
                     "title": {
