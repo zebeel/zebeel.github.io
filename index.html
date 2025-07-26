@@ -4,85 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LE VAN CHUONG</title>
+    
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Minimal Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-    <div class="top-controls collapsed">
-        <div class="language-switcher">
-            <button class="lang-btn active" data-lang="vi">🇻🇳</button>
-            <button class="lang-btn" data-lang="ja">🇯🇵</button>
-            <button class="lang-btn" data-lang="en">🇬🇧</button>
-        </div>
-        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
-            <span id="theme-icon">🌙</span>
-        </button>
-        <button class="settings-toggle" onclick="toggleTopControls()" title="Show/Hide Controls">⚙️</button>
-    </div>
-
-    <div class="floating-elements">
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-    </div>
-
-    <div class="container">
-        <div class="cv-card">
-            <div class="header">
-                <div class="profile-img" onclick="changeProfileColor()"><img src="assets/images/profile-image.png" alt=""></div>
-                <h1 id="full-name"></h1>
-                <p id="job-title"></p>
+<body class="has-background-white-ter">
+    
+    <!-- Top Navigation -->
+    <nav class="navbar is-light is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <p class="title is-5 has-text-grey-dark">CV</p>
             </div>
-
-            <div class="main-content">
-                <div class="sidebar">
-                    <!-- Contact Section -->
-                    <div class="section">
-                        <h2 id="contact-title"></h2>
-                        <div id="contact-content"></div>
-                    </div>
-
-                    <!-- Skills Section -->
-                    <div class="section">
-                        <h2 id="skills-title"></h2>
-                        <div id="skills-content"></div>
-                    </div>
-
-                    <!-- Languages Section -->
-                    <div class="section">
-                        <h2 id="languages-title"></h2>
-                        <div id="languages-content"></div>
-                    </div>
-                </div>
-
-                <div class="content">
-                    <!-- About Section -->
-                    <div class="section">
-                        <h2 id="about-title"></h2>
-                        <div id="about-content"></div>
-                    </div>
-
-                    <!-- Experience Section -->
-                    <div class="section">
-                        <h2 id="experience-title"></h2>
-                        <div id="experience-content"></div>
-                    </div>
-
-                    <!-- Education Section -->
-                    <div class="section">
-                        <h2 id="education-title"></h2>
-                        <div id="education-content"></div>
-                    </div>
-
-                    <!-- Projects Section -->
-                    <div class="section">
-                        <h2 id="projects-title"></h2>
-                        <div id="projects-content"></div>
+            
+            <!-- Mobile hamburger menu -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <div class="buttons has-addons">
+                                <button class="button is-small is-info lang-btn" data-lang="vi">🇻🇳</button>
+                                <button class="button is-small lang-btn" data-lang="ja">🇯🇵</button>
+                                <button class="button is-small lang-btn" data-lang="en">🇬🇧</button>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <button class="button is-small is-light theme-toggle" onclick="toggleTheme()">
+                                <span class="icon is-small">
+                                    <i class="fas fa-palette"></i>
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="section" style="padding-top: 4rem;">
+        <div class="container is-max-desktop">
+            
+            <!-- Hero Section -->
+            <section class="hero is-light is-medium mb-6">
+                <div class="hero-body has-text-centered">
+                    <figure class="image is-128x128 mx-auto mb-4">
+                        <img class="is-rounded" src="assets/images/profile-image.png" alt="Profile" onclick="changeProfileColor()">
+                    </figure>
+                    <h1 class="title is-2 has-text-grey-dark" id="full-name">LÊ VĂN CHƯƠNG</h1>
+                    <p class="subtitle is-4 has-text-grey" id="job-title">BrSE & Full-Stack Developer</p>
+                </div>
+            </section>
+
+            <!-- Main Grid -->
+            <div class="columns is-desktop is-variable is-6">
+                
+                <!-- Sidebar -->
+                <div class="column is-one-third">
+                    
+                    <!-- Contact Card -->
+                    <div class="box mb-5">
+                        <h2 class="title is-5 has-text-grey-dark mb-4" id="contact-title">
+                            <span class="icon-text">
+                                <span class="icon has-text-info">
+                                    <i class="fas fa-address-book"></i>
+                                </span>
+                                <span>Liên Hệ</span>
+                            </span>
+                        </h2>
+                        <div id="contact-content" class="content"></div>
+                    </div>
+
+                    <!-- Skills Card -->
+                    <div class="box mb-5">
+                        <h2 class="title is-5 has-text-grey-dark mb-4" id="skills-title">
+                            <span class="icon-text">
+                                <span class="icon has-text-info">
+                                    <i class="fas fa-code"></i>
+                                </span>
+                                <span>Kỹ Năng</span>
+                            </span>
+                        </h2>
+                        <div id="skills-content" class="content"></div>
+                    </div>
+
+                    <!-- Languages Card -->
+                    <div class="box mb-5">
+                        <h2 class="title is-5 has-text-grey-dark mb-4" id="languages-title">
+                            <span class="icon-text">
+                                <span class="icon has-text-info">
+                                    <i class="fas fa-language"></i>
+                                </span>
+                                <span>Ngôn Ngữ</span>
+                            </span>
+                        </h2>
+                        <div id="languages-content" class="content"></div>
+                    </div>
+
+                </div>
+
+                <!-- Main Content -->
+                <div class="column">
+                    
+                    <!-- About Card -->
+                    <div class="box mb-5">
+                        <h2 class="title is-5 has-text-grey-dark mb-4" id="about-title">
+                            <span class="icon-text">
+                                <span class="icon has-text-info">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <span>Giới Thiệu</span>
+                            </span>
+                        </h2>
+                        <div id="about-content" class="content"></div>
+                    </div>
+
+                    <!-- Experience Card -->
+                    <div class="box mb-5">
+                        <h2 class="title is-5 has-text-grey-dark mb-4" id="experience-title">
+                            <span class="icon-text">
+                                <span class="icon has-text-info">
+                                    <i class="fas fa-briefcase"></i>
+                                </span>
+                                <span>Kinh Nghiệm</span>
+                            </span>
+                        </h2>
+                        <div id="experience-content" class="content"></div>
+                    </div>
+
+                    <!-- Education Card -->
+                    <div class="box mb-5">
+                        <h2 class="title is-5 has-text-grey-dark mb-4" id="education-title">
+                            <span class="icon-text">
+                                <span class="icon has-text-info">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </span>
+                                <span>Học Vấn</span>
+                            </span>
+                        </h2>
+                        <div id="education-content" class="content"></div>
+                    </div>
+
+                    <!-- Projects Card -->
+                    <div class="box mb-5">
+                        <h2 class="title is-5 has-text-grey-dark mb-4" id="projects-title">
+                            <span class="icon-text">
+                                <span class="icon has-text-info">
+                                    <i class="fas fa-project-diagram"></i>
+                                </span>
+                                <span>Dự Án</span>
+                            </span>
+                        </h2>
+                        <div id="projects-content" class="content"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer has-background-light">
+        <div class="content has-text-centered">
+            <p class="has-text-grey">
+                @zebeel 2025
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/data.js"></script>
     <script src="assets/js/main.js"></script>
-
 </body>
 </html>
