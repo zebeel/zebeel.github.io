@@ -674,11 +674,17 @@
             }, 100);
         }
 
-        function loadThemePreference() {
-            const savedTheme = localStorage.getItem('cv-theme');
-            if (savedTheme && savedTheme !== currentTheme) {
-                toggleTheme();
-            }
+       function loadThemePreference() {
+           const savedTheme = localStorage.getItem('cv-theme');
+           if (savedTheme && savedTheme !== currentTheme) {
+               toggleTheme();
+           }
+       }
+
+        // Toggle visibility of controls at the top
+        function toggleTopControls() {
+            document.querySelector('.top-controls')
+                .classList.toggle('collapsed');
         }
 
         // =================== COLOR PALETTE MANAGEMENT ===================
@@ -870,6 +876,7 @@
             updateAbout,
             switchLanguage,
             toggleTheme,
+            toggleTopControls,
             getCurrentLanguage: () => currentLang,
             getCurrentTheme: () => currentTheme,
             getData: () => cvData
