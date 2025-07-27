@@ -382,6 +382,20 @@ const cvData = {
         },
         {
             "title": {
+                "vi": "My Blog",
+                "ja": "マイブログ",
+                "en": "My Blog"
+            },
+            "period": "2024",
+            "description": {
+                "vi": "My persanal blog to save my memories.",
+                "ja": "大切な記憶を保存するための個人ブログ。",
+                "en": "My personal blog to save my memories."
+            },
+            "details": "zebeel.github.io/blog"
+        },
+        {
+            "title": {
                 "vi": "Cây gia phả nhà Cố Bường",
                 "ja": "ブオン家の家系図デジタル化",
                 "en": "Buong Family Tree Digitalization"
