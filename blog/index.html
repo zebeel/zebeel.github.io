@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chuong's Blog</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>My Memories</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" role="navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item">
-                <i class="fas fa-heart mr-2" style="color: #ff6b6b;"></i>
-                <span class="logo-text">My Memories</span>
-            </a>
+    <div class="container">
+        <div class="header">
+            <h1>My Memories</h1>
+            <p>瞬間を刻む</p>
         </div>
-    </nav>
 
-    <!-- Main Content -->
-    <div class="container mt-4">
-        <div class="columns is-centered">
-            <div class="column is-6-desktop is-8-tablet">
-                <div id="posts-container">
-                    <!-- Posts will be loaded here -->
-                </div>
-            </div>
+        <div class="posts-container" id="posts-container">
+            <!-- Posts will be generated here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox('prev')">&larr;</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="Full size image">
+            <button class="lightbox-nav lightbox-next" onclick="navigateLightbox('next')">&rarr;</button>
+            <div id="lightbox-counter" class="lightbox-counter"></div>
         </div>
     </div>
 
